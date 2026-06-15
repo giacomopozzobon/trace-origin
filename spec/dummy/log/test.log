@@ -1,0 +1,392 @@
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "trace_origins"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "trace_origins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "trace" text NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_trace_origins_on_created_at" ON "trace_origins" ("created_at")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_trace_origins_on_record_type_and_record_id" ON "trace_origins" ("record_type", "record_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20260611000001)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2026-06-15 13:09:38.381201"], ["updated_at", "2026-06-15 13:09:38.381201"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.1ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[36mOrder Delete All (0.0ms)[0m  [1m[31mDELETE FROM "orders"[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[36mOrder Delete All (0.0ms)[0m  [1m[31mDELETE FROM "orders"[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[36mOrder Delete All (0.0ms)[0m  [1m[31mDELETE FROM "orders"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "trace_origins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "trace" text NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_trace_origins_on_created_at" ON "trace_origins" ("created_at")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_trace_origins_on_record_type_and_record_id" ON "trace_origins" ("record_type", "record_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20260611000001)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2026-06-15 13:12:00.104030"], ["updated_at", "2026-06-15 13:12:00.104030"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[36mOrder Delete All (0.0ms)[0m  [1m[31mDELETE FROM "orders"[0m
+Started POST "/api/orders" for 127.0.0.1 at 2026-06-15 15:12:00 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::OrdersController#create as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (1.4ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:12:00.134939"], ["updated_at", "2026-06-15 13:12:00.134939"]]
+  [1m[36mTraceOrigin::Entry Load (0.2ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Create (0.1ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 1], ["trace", "Api::OrdersController#create > CreateOrderService#call"], ["created_at", "2026-06-15 13:12:00.143190"], ["updated_at", "2026-06-15 13:12:00.143190"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 14ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 12553)
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Load (0.1ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[36mOrder Delete All (0.0ms)[0m  [1m[31mDELETE FROM "orders"[0m
+Started POST "/admin/orders" for 127.0.0.1 at 2026-06-15 15:12:00 +0200
+Processing by Admin::OrdersController#create as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.1ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:12:00.151819"], ["updated_at", "2026-06-15 13:12:00.151819"]]
+  [1m[36mTraceOrigin::Entry Load (0.1ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Create (0.0ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 2], ["trace", "Admin::OrdersController#create > OrderCreationFacade#create > PersistOrderService#call > OrderRepository#create"], ["created_at", "2026-06-15 13:12:00.153245"], ["updated_at", "2026-06-15 13:12:00.153245"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 2394)
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Load (1.2ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[36mOrder Delete All (0.0ms)[0m  [1m[31mDELETE FROM "orders"[0m
+Started POST "/api/orders/import" for 127.0.0.1 at 2026-06-15 15:12:00 +0200
+Processing by Api::OrdersController#import as HTML
+[ActiveJob] Enqueued ImportOrdersJob (Job ID: cad29fe2-7e21-4471-a608-368d00d10170) to Test(default)
+Completed 202 Accepted in 2ms (ActiveRecord: 0.0ms | Allocations: 548)
+[ActiveJob] [ImportOrdersJob] [cad29fe2-7e21-4471-a608-368d00d10170] Performing ImportOrdersJob (Job ID: cad29fe2-7e21-4471-a608-368d00d10170) from Test(default) enqueued at 2026-06-15T13:12:00Z
+[ActiveJob] [ImportOrdersJob] [cad29fe2-7e21-4471-a608-368d00d10170]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ImportOrdersJob] [cad29fe2-7e21-4471-a608-368d00d10170]   [1m[36mOrder Create (0.1ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "imported"], ["created_at", "2026-06-15 13:12:00.165969"], ["updated_at", "2026-06-15 13:12:00.165969"]]
+[ActiveJob] [ImportOrdersJob] [cad29fe2-7e21-4471-a608-368d00d10170]   [1m[36mTraceOrigin::Entry Load (0.1ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Order"], ["LIMIT", 1]]
+[ActiveJob] [ImportOrdersJob] [cad29fe2-7e21-4471-a608-368d00d10170]   [1m[36mTraceOrigin::Entry Create (0.0ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 3], ["trace", "ImportOrdersJob > CreateOrderService#call"], ["created_at", "2026-06-15 13:12:00.167470"], ["updated_at", "2026-06-15 13:12:00.167470"]]
+[ActiveJob] [ImportOrdersJob] [cad29fe2-7e21-4471-a608-368d00d10170]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ImportOrdersJob] [cad29fe2-7e21-4471-a608-368d00d10170] Performed ImportOrdersJob (Job ID: cad29fe2-7e21-4471-a608-368d00d10170) from Test(default) in 4.81ms
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Load (0.0ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "trace_origins"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "trace_origins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "trace" text NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_trace_origins_on_created_at" ON "trace_origins" ("created_at")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_trace_origins_on_record_type_and_record_id" ON "trace_origins" ("record_type", "record_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20260611000001)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2026-06-15 13:14:34.796439"], ["updated_at", "2026-06-15 13:14:34.796439"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.1ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[36mOrder Delete All (0.0ms)[0m  [1m[31mDELETE FROM "orders"[0m
+Started POST "/api/orders" for 127.0.0.1 at 2026-06-15 15:14:34 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::OrdersController#create as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:14:34.826743"], ["updated_at", "2026-06-15 13:14:34.826743"]]
+  [1m[36mTraceOrigin::Entry Load (0.2ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Create (0.1ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 1], ["trace", "ApplicationController#with_request_context > Api::OrdersController#create > CreateOrderService#call"], ["created_at", "2026-06-15 13:14:34.833695"], ["updated_at", "2026-06-15 13:14:34.833695"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 9ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 9740)
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Load (0.1ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[36mOrder Delete All (0.0ms)[0m  [1m[31mDELETE FROM "orders"[0m
+Started POST "/admin/orders" for 127.0.0.1 at 2026-06-15 15:14:34 +0200
+Processing by Admin::OrdersController#create as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.1ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:14:34.842387"], ["updated_at", "2026-06-15 13:14:34.842387"]]
+  [1m[36mTraceOrigin::Entry Load (0.1ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Create (0.0ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 2], ["trace", "ApplicationController#with_request_context > Admin::OrdersController#create > OrderCreationFacade#create > PersistOrderService#call > OrderRepository#create"], ["created_at", "2026-06-15 13:14:34.843774"], ["updated_at", "2026-06-15 13:14:34.843774"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 2461)
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Load (0.1ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[36mOrder Delete All (0.0ms)[0m  [1m[31mDELETE FROM "orders"[0m
+Started POST "/api/orders/import" for 127.0.0.1 at 2026-06-15 15:14:34 +0200
+Processing by Api::OrdersController#import as HTML
+[ActiveJob] Enqueued ImportOrdersJob (Job ID: 19bbeaa8-f13c-4bb3-b815-7d06d16ed475) to Test(default)
+Completed 202 Accepted in 1ms (ActiveRecord: 0.0ms | Allocations: 534)
+[ActiveJob] [ImportOrdersJob] [19bbeaa8-f13c-4bb3-b815-7d06d16ed475] Performing ImportOrdersJob (Job ID: 19bbeaa8-f13c-4bb3-b815-7d06d16ed475) from Test(default) enqueued at 2026-06-15T13:14:34Z
+[ActiveJob] [ImportOrdersJob] [19bbeaa8-f13c-4bb3-b815-7d06d16ed475]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ImportOrdersJob] [19bbeaa8-f13c-4bb3-b815-7d06d16ed475]   [1m[36mOrder Create (0.1ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "imported"], ["created_at", "2026-06-15 13:14:34.852189"], ["updated_at", "2026-06-15 13:14:34.852189"]]
+[ActiveJob] [ImportOrdersJob] [19bbeaa8-f13c-4bb3-b815-7d06d16ed475]   [1m[36mTraceOrigin::Entry Load (0.1ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Order"], ["LIMIT", 1]]
+[ActiveJob] [ImportOrdersJob] [19bbeaa8-f13c-4bb3-b815-7d06d16ed475]   [1m[36mTraceOrigin::Entry Create (0.1ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 3], ["trace", "ImportOrdersJob > CreateOrderService#call"], ["created_at", "2026-06-15 13:14:34.853529"], ["updated_at", "2026-06-15 13:14:34.853529"]]
+[ActiveJob] [ImportOrdersJob] [19bbeaa8-f13c-4bb3-b815-7d06d16ed475]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ImportOrdersJob] [19bbeaa8-f13c-4bb3-b815-7d06d16ed475] Performed ImportOrdersJob (Job ID: 19bbeaa8-f13c-4bb3-b815-7d06d16ed475) from Test(default) in 4.52ms
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Load (0.0ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "trace_origins"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "trace_origins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "trace" text NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_trace_origins_on_created_at" ON "trace_origins" ("created_at")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_trace_origins_on_record_type_and_record_id" ON "trace_origins" ("record_type", "record_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20260611000001)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2026-06-15 13:16:35.416499"], ["updated_at", "2026-06-15 13:16:35.416499"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.1ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[36mOrder Delete All (0.0ms)[0m  [1m[31mDELETE FROM "orders"[0m
+Started POST "/api/orders" for 127.0.0.1 at 2026-06-15 15:16:35 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::OrdersController#create as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.2ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:16:35.447300"], ["updated_at", "2026-06-15 13:16:35.447300"]]
+  [1m[36mTraceOrigin::Entry Load (0.2ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Create (0.1ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 1], ["trace", "Api::OrdersController#create > CreateOrderService#call"], ["created_at", "2026-06-15 13:16:35.453672"], ["updated_at", "2026-06-15 13:16:35.453672"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 9ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 9674)
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Load (0.1ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[36mOrder Delete All (0.0ms)[0m  [1m[31mDELETE FROM "orders"[0m
+Started POST "/admin/orders" for 127.0.0.1 at 2026-06-15 15:16:35 +0200
+Processing by Admin::OrdersController#create as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.1ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:16:35.461348"], ["updated_at", "2026-06-15 13:16:35.461348"]]
+  [1m[36mTraceOrigin::Entry Load (0.0ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Create (0.0ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 2], ["trace", "Admin::OrdersController#create > OrderCreationFacade#create > PersistOrderService#call > OrderRepository#create"], ["created_at", "2026-06-15 13:16:35.462393"], ["updated_at", "2026-06-15 13:16:35.462393"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 2394)
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Load (0.1ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[36mOrder Delete All (0.0ms)[0m  [1m[31mDELETE FROM "orders"[0m
+Started POST "/api/orders/import" for 127.0.0.1 at 2026-06-15 15:16:35 +0200
+Processing by Api::OrdersController#import as HTML
+[ActiveJob] Enqueued ImportOrdersJob (Job ID: e5371225-6d6b-489b-8d56-a43f7d2551c9) to Test(default)
+Completed 202 Accepted in 1ms (ActiveRecord: 0.0ms | Allocations: 534)
+[ActiveJob] [ImportOrdersJob] [e5371225-6d6b-489b-8d56-a43f7d2551c9] Performing ImportOrdersJob (Job ID: e5371225-6d6b-489b-8d56-a43f7d2551c9) from Test(default) enqueued at 2026-06-15T13:16:35Z
+[ActiveJob] [ImportOrdersJob] [e5371225-6d6b-489b-8d56-a43f7d2551c9]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ImportOrdersJob] [e5371225-6d6b-489b-8d56-a43f7d2551c9]   [1m[36mOrder Create (0.1ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "imported"], ["created_at", "2026-06-15 13:16:35.470610"], ["updated_at", "2026-06-15 13:16:35.470610"]]
+[ActiveJob] [ImportOrdersJob] [e5371225-6d6b-489b-8d56-a43f7d2551c9]   [1m[36mTraceOrigin::Entry Load (0.1ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Order"], ["LIMIT", 1]]
+[ActiveJob] [ImportOrdersJob] [e5371225-6d6b-489b-8d56-a43f7d2551c9]   [1m[36mTraceOrigin::Entry Create (0.1ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 3], ["trace", "ImportOrdersJob > CreateOrderService#call"], ["created_at", "2026-06-15 13:16:35.471811"], ["updated_at", "2026-06-15 13:16:35.471811"]]
+[ActiveJob] [ImportOrdersJob] [e5371225-6d6b-489b-8d56-a43f7d2551c9]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ImportOrdersJob] [e5371225-6d6b-489b-8d56-a43f7d2551c9] Performed ImportOrdersJob (Job ID: e5371225-6d6b-489b-8d56-a43f7d2551c9) from Test(default) in 4.29ms
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Load (0.0ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "trace_origins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "trace" text NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_trace_origins_on_created_at" ON "trace_origins" ("created_at")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_trace_origins_on_record_type_and_record_id" ON "trace_origins" ("record_type", "record_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20260611000001)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2026-06-15 13:17:42.086419"], ["updated_at", "2026-06-15 13:17:42.086419"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.1ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTraceOrigin::Entry Create (0.2ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 1], ["trace", "old"], ["created_at", "2026-06-05 13:17:42.091127"], ["updated_at", "2026-06-05 13:17:42.091839"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTraceOrigin::Entry Create (0.1ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 2], ["trace", "recent"], ["created_at", "2026-06-14 13:17:42.094160"], ["updated_at", "2026-06-14 13:17:42.094194"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.2ms)[0m  [1m[31mDELETE FROM "trace_origins" WHERE "trace_origins"."created_at" < ?[0m  [["created_at", "2026-06-08 13:17:42.094620"]]
+  [1m[36mTraceOrigin::Entry Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "trace_origins"[0m
+  [1m[36mTraceOrigin::Entry Load (0.1ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" ORDER BY "trace_origins"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTraceOrigin::Entry Create (0.0ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 1], ["trace", "old"], ["created_at", "2026-06-05 13:17:42.097075"], ["updated_at", "2026-06-05 13:17:42.097110"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTraceOrigin::Entry Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "trace_origins"[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.1ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:17:42.108628"], ["updated_at", "2026-06-15 13:17:42.108628"]]
+  [1m[36mTraceOrigin::Entry Load (0.1ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Create (0.0ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 1], ["trace", "Api::OrdersController#create > CreateOrderService#call"], ["created_at", "2026-06-15 13:17:42.112875"], ["updated_at", "2026-06-15 13:17:42.112875"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTraceOrigin::Entry Load (0.1ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_type" = ? AND "trace_origins"."record_id" = ? LIMIT ?[0m  [["record_type", "Order"], ["record_id", 1], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:17:42.114965"], ["updated_at", "2026-06-15 13:17:42.114965"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTraceOrigin::Entry Load (0.0ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_type" = ? AND "trace_origins"."record_id" = ? LIMIT ?[0m  [["record_type", "Order"], ["record_id", 2], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:17:42.117120"], ["updated_at", "2026-06-15 13:17:42.117120"]]
+  [1m[36mTraceOrigin::Entry Load (0.0ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Create (0.0ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 3], ["trace", "ImportOrdersJob"], ["created_at", "2026-06-15 13:17:42.118063"], ["updated_at", "2026-06-15 13:17:42.118063"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:17:42.119580"], ["updated_at", "2026-06-15 13:17:42.119580"]]
+  [1m[36mTraceOrigin::Entry Load (0.0ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Create (0.0ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 4], ["trace", "ImportOrdersJob"], ["created_at", "2026-06-15 13:17:42.120349"], ["updated_at", "2026-06-15 13:17:42.120349"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:17:42.123198"], ["updated_at", "2026-06-15 13:17:42.123198"]]
+[TraceOrigin] ActiveRecord::StatementInvalid: database unavailable
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "trace_origins"[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:17:42.125375"], ["updated_at", "2026-06-15 13:17:42.125375"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTraceOrigin::Entry Load (0.0ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:17:42.127237"], ["updated_at", "2026-06-15 13:17:42.127237"]]
+[TraceOrigin] StandardError: boom
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:17:42.129013"], ["updated_at", "2026-06-15 13:17:42.129013"]]
+  [1m[36mTraceOrigin::Entry Load (0.0ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Create (0.0ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 7], ["trace", "ImportOrdersJob"], ["created_at", "2026-06-15 13:17:42.129762"], ["updated_at", "2026-06-15 13:17:42.129762"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:17:42.130243"], ["updated_at", "2026-06-15 13:17:42.130243"]]
+  [1m[36mTraceOrigin::Entry Load (0.1ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Create (0.0ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 8], ["trace", "ImportOrdersJob"], ["created_at", "2026-06-15 13:17:42.130883"], ["updated_at", "2026-06-15 13:17:42.130883"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:17:42.131170"], ["updated_at", "2026-06-15 13:17:42.131170"]]
+  [1m[36mTraceOrigin::Entry Load (0.0ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Create (0.0ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 9], ["trace", "ImportOrdersJob"], ["created_at", "2026-06-15 13:17:42.131724"], ["updated_at", "2026-06-15 13:17:42.131724"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  [1m[36mTraceOrigin::Entry Load (0.6ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_type" = ? AND "trace_origins"."record_id" IN (?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 7], ["record_id", 8], ["record_id", 9]]
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[36mOrder Delete All (0.0ms)[0m  [1m[31mDELETE FROM "orders"[0m
+Started POST "/api/orders" for 127.0.0.1 at 2026-06-15 15:17:42 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::OrdersController#create as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:17:42.149860"], ["updated_at", "2026-06-15 13:17:42.149860"]]
+  [1m[36mTraceOrigin::Entry Load (0.0ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Create (0.0ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 10], ["trace", "Api::OrdersController#create > CreateOrderService#call"], ["created_at", "2026-06-15 13:17:42.150976"], ["updated_at", "2026-06-15 13:17:42.150976"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 3476)
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Load (0.1ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[36mOrder Delete All (0.0ms)[0m  [1m[31mDELETE FROM "orders"[0m
+Started POST "/admin/orders" for 127.0.0.1 at 2026-06-15 15:17:42 +0200
+Processing by Admin::OrdersController#create as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2026-06-15 13:17:42.163699"], ["updated_at", "2026-06-15 13:17:42.163699"]]
+  [1m[36mTraceOrigin::Entry Load (0.0ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Create (0.0ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 11], ["trace", "Admin::OrdersController#create > OrderCreationFacade#create > PersistOrderService#call > OrderRepository#create"], ["created_at", "2026-06-15 13:17:42.164762"], ["updated_at", "2026-06-15 13:17:42.164762"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 2396)
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Load (0.0ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[36mOrder Delete All (0.0ms)[0m  [1m[31mDELETE FROM "orders"[0m
+Started POST "/api/orders/import" for 127.0.0.1 at 2026-06-15 15:17:42 +0200
+Processing by Api::OrdersController#import as HTML
+[ActiveJob] Enqueued ImportOrdersJob (Job ID: 4d0b1223-581c-4b06-b9a7-895dadcf50db) to Test(default)
+Completed 202 Accepted in 1ms (ActiveRecord: 0.0ms | Allocations: 534)
+[ActiveJob] [ImportOrdersJob] [4d0b1223-581c-4b06-b9a7-895dadcf50db] Performing ImportOrdersJob (Job ID: 4d0b1223-581c-4b06-b9a7-895dadcf50db) from Test(default) enqueued at 2026-06-15T13:17:42Z
+[ActiveJob] [ImportOrdersJob] [4d0b1223-581c-4b06-b9a7-895dadcf50db]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ImportOrdersJob] [4d0b1223-581c-4b06-b9a7-895dadcf50db]   [1m[36mOrder Create (0.1ms)[0m  [1m[32mINSERT INTO "orders" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "imported"], ["created_at", "2026-06-15 13:17:42.173435"], ["updated_at", "2026-06-15 13:17:42.173435"]]
+[ActiveJob] [ImportOrdersJob] [4d0b1223-581c-4b06-b9a7-895dadcf50db]   [1m[36mTraceOrigin::Entry Load (0.1ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Order"], ["LIMIT", 1]]
+[ActiveJob] [ImportOrdersJob] [4d0b1223-581c-4b06-b9a7-895dadcf50db]   [1m[36mTraceOrigin::Entry Create (0.0ms)[0m  [1m[32mINSERT INTO "trace_origins" ("record_type", "record_id", "trace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["record_type", "Order"], ["record_id", 12], ["trace", "ImportOrdersJob > CreateOrderService#call"], ["created_at", "2026-06-15 13:17:42.174821"], ["updated_at", "2026-06-15 13:17:42.174821"]]
+[ActiveJob] [ImportOrdersJob] [4d0b1223-581c-4b06-b9a7-895dadcf50db]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ImportOrdersJob] [4d0b1223-581c-4b06-b9a7-895dadcf50db] Performed ImportOrdersJob (Job ID: 4d0b1223-581c-4b06-b9a7-895dadcf50db) from Test(default) in 4.67ms
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Load (0.0ms)[0m  [1m[34mSELECT "trace_origins".* FROM "trace_origins" WHERE "trace_origins"."record_id" = ? AND "trace_origins"."record_type" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Order"], ["LIMIT", 1]]
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
+  [1m[36mTraceOrigin::Entry Delete All (0.0ms)[0m  [1m[31mDELETE FROM "trace_origins"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM orders[0m
